@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хочу так — Парикмахерская и студия колористики в Казани | Победитель премии 2ГИС</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        wood: {
+                            50: '#FAF7F2',
+                            100: '#F3ECE1',
+                            200: '#E5D5BE',
+                            500: '#B88655',
+                            600: '#9E6F40',
+                            700: '#7D552E',
+                        },
+                        emeraldSalon: {
+                            50: '#ECFDF5',
+                            500: '#1F7A5A',
+                            600: '#166147',
+                            900: '#0D3829',
+                        },
+                        graphite: {
+                            800: '#1F1F23',
+                            900: '#141417',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Декоративная текстура деревянных реек из интерьера салона */
+        .wood-slats-bg {
+            background-image: repeating-linear-gradient(
+                90deg,
+                rgba(184, 134, 85, 0.08) 0px,
+                rgba(184, 134, 85, 0.08) 14px,
+                transparent 14px,
+                transparent 28px
+            );
+        }
+        .dark .wood-slats-bg {
+            background-image: repeating-linear-gradient(
+                90deg,
+                rgba(184, 134, 85, 0.12) 0px,
+                rgba(184, 134, 85, 0.12) 14px,
+                transparent 14px,
+                transparent 28px
+            );
+        }
+        /* Плавное появление карточек */
+        .fade-in-up {
+            animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Кастомный скроллбар */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF7F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B88655;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-wood-50 text-graphite-900 dark:bg-graphite-900 dark:text-wood-50 font-sans antialiased selection:bg-wood-500 selection:text-white transition-colors duration-300">
+
+    <!-- ВЕРХНЯЯ ИНФО-ПАНЕЛЬ (Атрибуты 2ГИС) -->
+    <div class="bg-graphite-900 dark:bg-black text-wood-100 text-xs py-2.5 px-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex flex-wrap items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 font-semibold text-amber-400">
+                    <i class="ph-fill ph-trophy text-sm"></i> Победитель премии 2ГИС
+                </span>
+                <span class="hidden sm:inline-flex items-center gap-1.5 text-zinc-300">
+                    <i class="ph-fill ph-map-pin text-wood-500"></i> Ост. «Краснококшайская» (5 мин • 450 м)
+                </span>
+                <span class="hidden md:inline-flex items-center gap-1.5 text-emerald-400">
+                    <i class="ph-fill ph-shield-check"></i> УФ-стерилизация «Всё стерильненько»
+                </span>
+            </div>
+            <div class="flex items-center gap-4 ml-auto">
+                <span class="hidden lg:inline-flex items-center gap-1 text-zinc-400">
+                    <i class="ph ph-car"></i> 9 парковок рядом
+                </span>
+                <span class="inline-flex items-center gap-1 text-zinc-300">
+                    <i class="ph ph-PawPrint text-wood-500"></i> Dog-friendly
+                </span>
+                <span class="inline-flex items-center gap-1 text-emerald-400 font-medium">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Сегодня открыто
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЛИПКАЯ ШАПКА САЙТА (HEADER) -->
+    <header class="sticky top-0 z-40 bg-wood-50/90 dark:bg-graphite-900/90 backdrop-blur-md border-b border-wood-200/70 dark:border-zinc-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <!-- Логотип -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-graphite-900 dark:bg-wood-500 text-white flex items-center justify-center font-serif font-bold text-xl shadow-md group-hover:bg-wood-500 transition-colors">
+                    ХТ
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-extrabold text-xl tracking-tight uppercase">Хочу так</span>
+                        <span class="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emeraldSalon-500/15 text-emeraldSalon-600 dark:text-emerald-400 border border-emeraldSalon-500/30">
+                            2ГИС Award
+                        </span>
+                    </div>
+                    <span class="block text-xs text-zinc-500 dark:text-zinc-400">Парикмахерская &amp; Студия колористики</span>
+                </div>
+            </a>
+
+            <!-- Навигация (Десктоп) -->
+            <nav class="hidden xl:flex items-center gap-7 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                <a href="#catalog" class="hover:text-wood-500 transition-colors">Услуги и цены</a>
+                <a href="#calculator" class="hover:text-wood-500 transition-colors">Калькулятор</a>
+                <a href="#equipment" class="hover:text-wood-500 transition-colors">Стандарты и интерьер</a>
+                <a href="#comfort" class="hover:text-wood-500 transition-colors">Доступная среда</a>
+                <a href="#reviews" class="hover:text-wood-500 transition-colors">Отзывы</a>
+                <a href="#contacts" class="hover:text-wood-500 transition-colors">Как добраться</a>
+            </nav>
+
+            <!-- Кнопки действий -->
+            <div class="flex items-center gap-2.5">
+                <!-- Переключатель темы -->
+                <button onclick="toggleTheme()" aria-label="Переключить тему" class="p-2.5 rounded-xl border border-wood-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-wood-100 dark:hover:bg-zinc-800 transition-colors" title="Светлая / Темная тема">
+                    <i id="themeIcon" class="ph ph-moon text-lg"></i>
+                </button>
+
+                <!-- Кнопка корзины выбранных услуг -->
+                <button onclick="openBookingModal()" class="relative inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-wood-100 dark:bg-zinc-800 text-graphite-900 dark:text-white font-semibold text-sm hover:bg-wood-200 dark:hover:bg-zinc-700 transition-colors">
+                    <i class="ph-bold ph-Sparkle text-wood-600 dark:text-wood-500"></i>
+                    <span class="hidden sm:inline">Мой визит</span>
+                    <span id="headerCartCount" class="px-2 py-0.5 text-xs rounded-full bg-wood-500 text-white font-bold">0</span>
+                </button>
+
+                <!-- Главная кнопка записи -->
+                <button onclick="openBookingModal()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-graphite-900 dark:bg-wood-500 text-white font-bold text-sm hover:bg-wood-600 dark:hover:bg-wood-600 shadow-lg shadow-wood-500/10 transition-all transform active:scale-95">
+                    <i class="ph-bold ph-calendar-check text-base"></i>
+                    <span>Записаться</span>
+                </button>
+
+                <!-- Мобильное меню -->
+                <button onclick="toggleMobileMenu()" class="xl:hidden p-2.5 rounded-xl border border-wood-200 dark:border-zinc-700">
+                    <i class="ph ph-list text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Выпадающее мобильное меню -->
+        <div id="mobileMenu" class="hidden xl:hidden bg-white dark:bg-graphite-800 border-b border-wood-200 dark:border-zinc-700 px-4 pt-3 pb-5 space-y-2">
+            <a href="#catalog" onclick="toggleMobileMenu()" class="block py-2 font-semibold hover:text-wood-500">Услуги и прайс-лист</a>
+            <a href="#calculator" onclick="toggleMobileMenu()" class="block py-2 font-semibold hover:text-wood-500">Калькулятор окрашивания и завивки</a>
+            <a href="#equipment" onclick="toggleMobileMenu()" class="block py-2 font-semibold hover:text-wood-500">Оборудование и фото залов</a>
+            <a href="#comfort" onclick="toggleMobileMenu()" class="block py-2 font-semibold hover:text-wood-500">Доступная среда (коляски, пандус, dog-friendly)</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2 font-semibold hover:text-wood-500">Отзывы гостей</a>
+            <a href="#contacts" onclick="toggleMobileMenu()" class="block py-2 font-semibold hover:text-wood-500">Адрес и парковка</a>
+        </div>
+    </header>
+
+    <!-- ПЕРВЫЙ ЭКРАН (HERO SECTION) -->
+    <section class="relative overflow-hidden wood-slats-bg pt-8 pb-16 lg:py-20 border-b border-wood-200/70 dark:border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Левая колонка: Оффер и быстрый фильтр -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex flex-wrap items-center gap-2 bg-white dark:bg-zinc-800/90 border border-wood-200 dark:border-zinc-700 rounded-full px-4 py-1.5 shadow-sm">
+                        <span class="flex items-center gap-1 text-xs font-bold text-emeraldSalon-600 dark:text-emerald-400">
+                            <i class="ph-fill ph-seal-check text-base"></i> Победитель премии 2ГИС
+                        </span>
+                        <span class="text-zinc-300 dark:text-zinc-600">•</span>
+                        <span class="text-xs font-medium text-zinc-600 dark:text-zinc-300">Любимая парикмахерская для всей семьи</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.12]">
+                        Смотрите в зеркало и говорите: <span class="italic text-wood-600 dark:text-wood-500">«Хочу именно так!»</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl leading-relaxed">
+                        От модельных стрижек за <strong class="text-graphite-900 dark:text-white">800 ₽</strong> и креативного Hair-Tattoo до сложного окрашивания, биозавивки и расслабляющего SPA для головы. Персональные медиа-экраны на каждом месте и 100% УФ-стерилизация инструментов прямо перед вами.
+                    </p>
+
+                    <!-- Интерактивный виджет быстрого подбора прямо на первом экране -->
+                    <div class="bg-white dark:bg-graphite-800 p-4 sm:p-5 rounded-2xl border border-wood-200 dark:border-zinc-700 shadow-xl shadow-wood-500/5">
+                        <div class="text-xs font-bold uppercase tracking-wider text-wood-600 dark:text-wood-500 mb-3 flex items-center gap-1.5">
+                            <i class="ph-fill ph-magic-wand"></i> Быстрый переход к нужной услуге:
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                            <button onclick="jumpToCategory('haircut')" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 hover:bg-wood-500 hover:text-white dark:hover:bg-wood-500 transition-all text-left group">
+                                <i class="ph-duotone ph-scissors text-xl text-wood-600 group-hover:text-white"></i>
+                                <div>
+                                    <div class="text-xs font-bold">Стрижки (4)</div>
+                                    <div class="text-[11px] opacity-75">от 800 ₽</div>
+                                </div>
+                            </button>
+                            <button onclick="jumpToCategory('female-color')" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 hover:bg-wood-500 hover:text-white dark:hover:bg-wood-500 transition-all text-left group">
+                                <i class="ph-duotone ph-paint-brush-broad text-xl text-wood-600 group-hover:text-white"></i>
+                                <div>
+                                    <div class="text-xs font-bold">Окрашивание (4)</div>
+                                    <div class="text-[11px] opacity-75">от 2 000 ₽</div>
+                                </div>
+                            </button>
+                            <button onclick="jumpToCategory('curls')" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 hover:bg-wood-500 hover:text-white dark:hover:bg-wood-500 transition-all text-left group">
+                                <i class="ph-duotone ph-waves text-xl text-wood-600 group-hover:text-white"></i>
+                                <div>
+                                    <div class="text-xs font-bold">Кудри и локоны</div>
+                                    <div class="text-[11px] opacity-75">от 1 200 ₽</div>
+                                </div>
+                            </button>
+                            <button onclick="jumpToCategory('care')" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 hover:bg-wood-500 hover:text-white dark:hover:bg-wood-500 transition-all text-left group">
+                                <i class="ph-duotone ph-sparkle text-xl text-emeraldSalon-500 group-hover:text-white"></i>
+                                <div>
+                                    <div class="text-xs font-bold">Ламинирование &amp; SPA</div>
+                                    <div class="text-[11px] opacity-75">от 3 000 ₽</div>
+                                </div>
+                            </button>
+                            <button onclick="jumpToCategory('men')" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 hover:bg-wood-500 hover:text-white dark:hover:bg-wood-500 transition-all text-left group">
+                                <i class="ph-duotone ph-user-focus text-xl text-wood-600 group-hover:text-white"></i>
+                                <div>
+                                    <div class="text-xs font-bold">Борода и стиль</div>
+                                    <div class="text-[11px] opacity-75">700 ₽</div>
+                                </div>
+                            </button>
+                            <button onclick="openBookingModal('Детская стрижка / Семейный визит', 600)" class="flex items-center gap-2.5 p-2.5 rounded-xl bg-emeraldSalon-50 dark:bg-emeraldSalon-900/40 hover:bg-emeraldSalon-500 hover:text-white transition-all text-left group">
+                                <i class="ph-duotone ph-baby text-xl text-emeraldSalon-600 dark:text-emerald-400 group-hover:text-white"></i>
+                                <div>
+                                    <div class="text-xs font-bold">Детская / с коляской</div>
+                                    <div class="text-[11px] opacity-75">Мультики у кресла</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Преимущества строкой -->
+                    <div class="grid grid-cols-3 gap-4 pt-2">
+                        <div class="bg-white/80 dark:bg-zinc-800/60 p-3.5 rounded-2xl border border-wood-200/60 dark:border-zinc-700">
+                            <div class="font-extrabold text-xl sm:text-2xl text-wood-600 dark:text-wood-500">13+ услуг</div>
+                            <div class="text-xs text-zinc-500 dark:text-zinc-400">Четкий прайс без скрытых доплат</div>
+                        </div>
+                        <div class="bg-white/80 dark:bg-zinc-800/60 p-3.5 rounded-2xl border border-wood-200/60 dark:border-zinc-700">
+                            <div class="font-extrabold text-xl sm:text-2xl text-emeraldSalon-600 dark:text-emerald-400">100% УФ</div>
+                            <div class="text-xs text-zinc-500 dark:text-zinc-400">Бокс «Всё стерильненько» у каждого кресла</div>
+                        </div>
+                        <div class="bg-white/80 dark:bg-zinc-800/60 p-3.5 rounded-2xl border border-wood-200/60 dark:border-zinc-700">
+                            <div class="font-extrabold text-xl sm:text-2xl text-graphite-900 dark:text-white">450 метров</div>
+                            <div class="text-xs text-zinc-500 dark:text-zinc-400">5 минут от ост. Краснококшайская</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка: Визуальная карточка интерьера салона -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-zinc-800 bg-graphite-900">
+                        <!-- Стилизованная визуализация главного зала с реечным деревом и лампами-куполами -->
+                        <div class="relative h-[460px] sm:h-[520px] flex flex-col justify-between p-6 bg-gradient-to-t from-black/90 via-black/40 to-black/30 bg-cover bg-center"
+                             style="background-image: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85');">
+                            
+                            <!-- Верхние бейджи на фото -->
+                            <div class="flex items-center justify-between gap-2 z-10">
+                                <span class="px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md text-white text-xs font-semibold flex items-center gap-1.5 border border-white/15">
+                                    <i class="ph-fill ph-television text-wood-500 text-base"></i> Персональные ТВ-экраны у зеркал
+                                </span>
+                                <span class="px-3 py-1.5 rounded-full bg-emeraldSalon-500 text-white text-xs font-bold shadow-lg">
+                                    👍 Всё стерильненько
+                                </span>
+                            </div>
+
+                            <!-- Интерактивная плашка оборудования поверх фото -->
+                            <div class="z-10 space-y-3 bg-graphite-900/90 backdrop-blur-md p-5 rounded-2xl border border-white/15 text-white">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs uppercase tracking-widest text-wood-500 font-bold">Атмосфера салона «Хочу так»</span>
+                                    <span class="text-xs text-zinc-300 flex items-center gap-1"><i class="ph-fill ph-star text-amber-400"></i> Премия 2ГИС</span>
+                                </div>
+                                <h3 class="font-serif text-2xl font-bold leading-snug">
+                                    Деревянные рейки, уютный свет и стерилизатор на каждом рабочем месте
+                                </h3>
+                                <p class="text-xs text-zinc-300 leading-relaxed">
+                                    Каждое кресло оборудовано индивидуальным УФ-боксом <span class="text-white font-semibold">Sterilizer with UV</span>, встроенным медиа-экраном и стационарным эко-пылесосом.
+                                </p>
+                                <div class="pt-2 flex flex-wrap gap-2">
+                                    <a href="#equipment" class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl bg-wood-500 text-white hover:bg-wood-600 transition-colors">
+                                        <i class="ph-bold ph-eye"></i> Рассмотреть рабочие места
+                                    </a>
+                                    <button onclick="openBookingModal()" class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors">
+                                        Записаться сейчас
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- КАТАЛОГ УСЛУГ И ЦЕН (ВИТРИНА С ФИЛЬТРАМИ И КОРЗИНОЙ ЗАПИСИ) -->
+    <section id="catalog" class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Заголовок секции -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                <div>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-wood-600 dark:text-wood-500 mb-2">
+                        <i class="ph-fill ph-scissors"></i> Официальный каталог и прайс-лист
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold">Услуги парикмахерской «Хочу так»</h2>
+                </div>
+                <p class="text-sm text-zinc-600 dark:text-zinc-400 max-w-md">
+                    Добавляйте одну или несколько услуг в свой визит — система автоматически посчитает ориентировочное время и бюджет.
+                </p>
+            </div>
+
+            <!-- Панель фильтров по категориям (с точными цифрами из 2ГИС) + Поиск -->
+            <div class="bg-white dark:bg-graphite-800 p-4 rounded-2xl border border-wood-200 dark:border-zinc-700 shadow-sm mb-8 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <!-- Кнопки категорий -->
+                    <div class="flex flex-wrap gap-2" id="categoryTabs">
+                        <button onclick="filterCatalog('all')" data-cat="all" class="cat-tab active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-graphite-900 text-white dark:bg-wood-500">
+                            Все направления <span class="ml-1 px-1.5 py-0.5 rounded-full bg-white/20 text-[11px]">13</span>
+                        </button>
+                        <button onclick="filterCatalog('haircut')" data-cat="haircut" class="cat-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-wood-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-wood-100">
+                            Стрижка <span class="ml-1 px-1.5 py-0.5 rounded-full bg-wood-200 dark:bg-zinc-700 text-[11px]">4</span>
+                        </button>
+                        <button onclick="filterCatalog('female-color')" data-cat="female-color" class="cat-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-wood-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-wood-100">
+                            Женское окрашивание <span class="ml-1 px-1.5 py-0.5 rounded-full bg-wood-200 dark:bg-zinc-700 text-[11px]">3</span>
+                        </button>
+                        <button onclick="filterCatalog('curls')" data-cat="curls" class="cat-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-wood-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-wood-100">
+                            Кудри - Локоны <span class="ml-1 px-1.5 py-0.5 rounded-full bg-wood-200 dark:bg-zinc-700 text-[11px]">2</span>
+                        </button>
+                        <button onclick="filterCatalog('styling')" data-cat="styling" class="cat-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-wood-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-wood-100">
+                            Укладка «Локоны» <span class="ml-1 px-1.5 py-0.5 rounded-full bg-wood-200 dark:bg-zinc-700 text-[11px]">1</span>
+                        </button>
+                        <button onclick="filterCatalog('care')" data-cat="care" class="cat-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-wood-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-wood-100">
+                            Уход и SPA <span class="ml-1 px-1.5 py-0.5 rounded-full bg-wood-200 dark:bg-zinc-700 text-[11px]">2</span>
+                        </button>
+                        <button onclick="filterCatalog('men')" data-cat="men" class="cat-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-wood-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-wood-100">
+                            Мужской уход и окрашивание <span class="ml-1 px-1.5 py-0.5 rounded-full bg-wood-200 dark:bg-zinc-700 text-[11px]">2</span>
+                        </button>
+                    </div>
+
+                    <!-- Поиск по прайсу -->
+                    <div class="relative w-full sm:w-64">
+                        <i class="ph ph-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400"></i>
+                        <input type="text" id="serviceSearch" oninput="renderServices()" placeholder="Поиск (напр. каре, борода)..." 
+                               class="w-full pl-9 pr-4 py-2 rounded-xl bg-wood-50 dark:bg-zinc-900 border border-wood-200 dark:border-zinc-700 text-sm focus:outline-none focus:border-wood-500">
+                    </div>
+                </div>
+
+                <!-- Быстрые теги специализаций из 2ГИС -->
+                <div class="pt-2 border-t border-wood-100 dark:border-zinc-700/60 flex flex-wrap items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+                    <span class="font-bold text-graphite-900 dark:text-wood-200">Все направления 2ГИС:</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-wood-50 dark:bg-zinc-900">Жен. стрижка от 1000 ₽</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-wood-50 dark:bg-zinc-900">Муж. стрижка от 800 ₽</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-wood-50 dark:bg-zinc-900">Детская стрижка</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-wood-50 dark:bg-zinc-900">Стрижка бороды 700 ₽</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-wood-50 dark:bg-zinc-900">Женская химзавивка</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-wood-50 dark:bg-zinc-900">Свадебные и вечерние причёски</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-wood-50 dark:bg-zinc-900">Прикорневой объём волос</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-emeraldSalon-50 dark:bg-emeraldSalon-900/30 text-emeraldSalon-600 dark:text-emerald-400 font-semibold">SPA для головы</span>
+                </div>
+            </div>
+
+            <!-- Сетка карточек услуг (генерируется из JS) -->
+            <div id="servicesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+            <!-- Плавающая панель выбранных услуг (если клиент выбрал >= 1 услуги) -->
+            <div id="stickyCartBar" class="hidden mt-8 bg-graphite-900 dark:bg-zinc-800 text-white p-5 rounded-2xl shadow-2xl border border-wood-500/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-wood-500 flex items-center justify-center text-2xl shrink-0">
+                        <i class="ph-fill ph-shopping-bag-open"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs uppercase tracking-wider text-wood-200 font-bold">Собранный комплекс для записи</div>
+                        <div id="stickyCartSummary" class="text-sm sm:text-base font-bold">Выбрано услуг: 0</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+                    <button onclick="clearCart()" class="px-3.5 py-2 rounded-xl text-xs font-semibold text-zinc-300 hover:bg-white/10 transition-colors">
+                        Очистить
+                    </button>
+                    <button onclick="openBookingModal()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-wood-500 hover:bg-wood-600 text-white font-bold text-sm transition-all shadow-lg">
+                        Оформить запись →
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР ОКРАШИВАНИЯ, ЗАВИВКИ И УХОДА -->
+    <section id="calculator" class="py-16 lg:py-24 bg-graphite-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Описание калькулятора -->
+                <div class="lg:col-span-5 space-y-5">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-wood-500">
+                        <i class="ph-fill ph-calculator"></i> Умный онлайн-расчет
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">
+                        Рассчитайте точную стоимость окрашивания или завивки за 15 секунд
+                    </h2>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                        Стоимость работы колориста или мастера по завивке зависит от выбранной техники и длины волос. Выберите свои параметры, чтобы узнать ориентировочный бюджет и длительность процедуры.
+                    </p>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-wood-500/20 text-wood-500 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="ph-bold ph-check"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-zinc-300"><strong class="text-white">Бесплатная диагностика прядей</strong> перед любым сложным окрашиванием или биозавивкой.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-emeraldSalon-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="ph-bold ph-television"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-zinc-300"><strong class="text-white">Персональный экран перед креслом:</strong> 2–3 часа окрашивания пролетят незаметно за любимым фильмом.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Панель калькулятора -->
+                <div class="lg:col-span-7 bg-graphite-800 border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+                    
+                    <!-- Шаг 1: Выбор базовой процедуры -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-wood-200 mb-2.5">1. Выберите желаемую процедуру:</label>
+                        <select id="calcProcedure" onchange="calculatePrice()" class="w-full p-3.5 rounded-xl bg-graphite-900 border border-white/15 text-white font-semibold text-sm focus:outline-none focus:border-wood-500">
+                            <option value="5000" data-name="Сложное окрашивание (Airtouch / Балаяж / Шатуш)" data-time="180">Сложное окрашивание (Airtouch, Шатуш, Балаяж) — база от 5 000 ₽</option>
+                            <option value="4000" data-name="Мелирование" data-time="120">Мелирование — база от 4 000 ₽</option>
+                            <option value="3700" data-name="Однотонное окрашивание" data-time="90">Однотонное женское окрашивание — база от 3 700 ₽</option>
+                            <option value="3200" data-name="Химическая завивка" data-time="120">Химическая завивка локонов — база от 3 200 ₽</option>
+                            <option value="3000" data-name="Био-химическая завивка" data-time="120">Био-химическая завивка (щадящая) — база от 3 000 ₽</option>
+                            <option value="3000" data-name="Ламинирование волос" data-time="90">Ламинирование волос — база от 3 000 ₽</option>
+                            <option value="2000" data-name="Мужское окрашивание" data-time="60">Мужское окрашивание — база от 2 000 ₽</option>
+                        </select>
+                    </div>
+
+                    <!-- Шаг 2: Длина волос -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-wood-200 mb-2.5">2. Ваша длина волос:</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="lengthButtons">
+                            <button type="button" onclick="setHairLength(0, 'Короткие (до 15 см)', this)" class="len-btn active p-3 rounded-xl border border-wood-500 bg-wood-500/20 text-left transition-all">
+                                <div class="text-xs font-bold text-white">Короткие</div>
+                                <div class="text-[11px] text-zinc-300">Базовый тариф</div>
+                            </button>
+                            <button type="button" onclick="setHairLength(600, 'Средние (по плечи)', this)" class="len-btn p-3 rounded-xl border border-white/10 bg-graphite-900 text-left hover:border-white/30 transition-all">
+                                <div class="text-xs font-bold text-white">Средние</div>
+                                <div class="text-[11px] text-zinc-400">По плечи (+600 ₽)</div>
+                            </button>
+                            <button type="button" onclick="setHairLength(1300, 'Длинные (до лопаток)', this)" class="len-btn p-3 rounded-xl border border-white/10 bg-graphite-900 text-left hover:border-white/30 transition-all">
+                                <div class="text-xs font-bold text-white">Длинные</div>
+                                <div class="text-[11px] text-zinc-400">До лопаток (+1 300 ₽)</div>
+                            </button>
+                            <button type="button" onclick="setHairLength(2200, 'Очень длинные (ниже лопаток)', this)" class="len-btn p-3 rounded-xl border border-white/10 bg-graphite-900 text-left hover:border-white/30 transition-all">
+                                <div class="text-xs font-bold text-white">Макси</div>
+                                <div class="text-[11px] text-zinc-400">Ниже лопаток (+2 200 ₽)</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 3: Дополнительные SPA и стрижка кончиков -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-wood-200 mb-2.5">3. Полезные дополнения к визиту:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="flex items-center gap-3 p-3.5 rounded-xl bg-graphite-900 border border-white/10 cursor-pointer hover:border-wood-500/50 transition-colors">
+                                <input type="checkbox" id="addonSpa" onchange="calculatePrice()" class="w-4 h-4 accent-wood-500 rounded">
+                                <div class="text-xs">
+                                    <div class="font-bold text-white">+ SPA для головы и питание</div>
+                                    <div class="text-zinc-400">+ 900 ₽ к процедуре</div>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-3 p-3.5 rounded-xl bg-graphite-900 border border-white/10 cursor-pointer hover:border-wood-500/50 transition-colors">
+                                <input type="checkbox" id="addonCut" onchange="calculatePrice()" class="w-4 h-4 accent-wood-500 rounded">
+                                <div class="text-xs">
+                                    <div class="font-bold text-white">+ Оформление среза / Каре / Каскад</div>
+                                    <div class="text-zinc-400">+ 800 ₽ в комплексе</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Итог расчета -->
+                    <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <div class="text-xs text-zinc-400">Ориентировочная стоимость и время:</div>
+                            <div class="flex items-baseline gap-3">
+                                <span id="calcTotalPrice" class="text-3xl font-extrabold text-wood-500">от 5 000 ₽</span>
+                                <span id="calcTotalTime" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/10 text-zinc-200">~ 3 часа</span>
+                            </div>
+                        </div>
+                        <button onclick="bookFromCalculator()" class="px-6 py-3.5 rounded-xl bg-wood-500 hover:bg-wood-600 text-white font-bold text-sm shadow-lg transition-all">
+                            Зафиксировать расчет и записаться
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- СТАНДАРТЫ ОБОРУДОВАНИЯ И РЕАЛЬНЫЙ ИНТЕРЬЕР САЛОНА (ПО ФОТОГРАФИЯМ) -->
+    <section id="equipment" class="py-16 lg:py-24 border-b border-wood-200/70 dark:border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-emeraldSalon-600 dark:text-emerald-400 mb-2">
+                    <i class="ph-fill ph-sparkle"></i> Технологии комфорта и чистоты
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+                    Почему в «Хочу так» приятно находиться взрослым и детям
+                </h2>
+                <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base">
+                    Мы продумали каждое рабочее место до мелочей: от ультрафиолетовых стерилизаторов прямо перед глазами гостя до персональных мониторов и встроенных вакуумных систем.
+                </p>
+            </div>
+
+            <!-- 4 ключевые фишки с реальных фотографий интерьера -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                
+                <!-- 1. УФ-Стерилизатор -->
+                <div class="bg-white dark:bg-graphite-800 rounded-2xl p-6 border border-wood-200 dark:border-zinc-700 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emeraldSalon-50 dark:bg-emeraldSalon-900/40 text-emeraldSalon-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-4">
+                            <i class="ph-fill ph-shield-check"></i>
+                        </div>
+                        <span class="inline-block text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-graphite-900 text-white mb-2">
+                            👍 Всё стерильненько
+                        </span>
+                        <h3 class="font-bold text-lg mb-2">УФ-бокс Sterilizer with UV у каждого кресла</h3>
+                        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            Никаких сомнений в чистоте: мастер достает расчески и ножницы из персонального ультрафиолетового стерилизатора, встроенного прямо в вашу секцию.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-wood-100 dark:border-zinc-700/60 text-xs font-semibold text-emeraldSalon-600 dark:text-emerald-400">
+                        ✓ Трехступенчатая обработка
+                    </div>
+                </div>
+
+                <!-- 2. Встроенные экраны -->
+                <div class="bg-white dark:bg-graphite-800 rounded-2xl p-6 border border-wood-200 dark:border-zinc-700 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-wood-100 dark:bg-zinc-700 text-wood-600 dark:text-wood-500 flex items-center justify-center text-2xl mb-4">
+                            <i class="ph-fill ph-television"></i>
+                        </div>
+                        <span class="inline-block text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-wood-100 dark:bg-zinc-700 text-wood-700 dark:text-wood-200 mb-2">
+                            Медиа-зона
+                        </span>
+                        <h3 class="font-bold text-lg mb-2">Индивидуальные экраны под зеркалами</h3>
+                        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            В каждую рабочую тумбу встроен монитор: включаем мультфильмы для маленьких непосед или интересные передачи, пока идет сложное окрашивание.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-wood-100 dark:border-zinc-700/60 text-xs font-semibold text-wood-600 dark:text-wood-500">
+                        ✓ Дети сидят спокойно всю стрижку
+                    </div>
+                </div>
+
+                <!-- 3. Пневмосовки / Стационарные пылесосы -->
+                <div class="bg-white dark:bg-graphite-800 rounded-2xl p-6 border border-wood-200 dark:border-zinc-700 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-wood-100 dark:bg-zinc-700 text-wood-600 dark:text-wood-500 flex items-center justify-center text-2xl mb-4">
+                            <i class="ph-fill ph-wind"></i>
+                        </div>
+                        <span class="inline-block text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-wood-100 dark:bg-zinc-700 text-wood-700 dark:text-wood-200 mb-2">
+                            Эко-клининг
+                        </span>
+                        <h3 class="font-bold text-lg mb-2">Встроенные вакуумные системы уборки</h3>
+                        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            На каждой деревянной стойке закреплен мощный вакуумный шланг-пылесос, который мгновенно убирает остриженные волосы без пыли в воздухе.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-wood-100 dark:border-zinc-700/60 text-xs font-semibold text-wood-600 dark:text-wood-500">
+                        ✓ Идеальная чистота вокруг кресла
+                    </div>
+                </div>
+
+                <!-- 4. Тропическая SPA-мойка -->
+                <div class="bg-white dark:bg-graphite-800 rounded-2xl p-6 border border-wood-200 dark:border-zinc-700 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emeraldSalon-50 dark:bg-emeraldSalon-900/40 text-emeraldSalon-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-4">
+                            <i class="ph-fill ph-leaf"></i>
+                        </div>
+                        <span class="inline-block text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-emeraldSalon-500 text-white mb-2">
+                            Релакс и SPA
+                        </span>
+                        <h3 class="font-bold text-lg mb-2">Зеленая зона SPA для головы и ламинирования</h3>
+                        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            Уютная зона с тропическим декором, мягкими глубокими креслами-мойками и расслабляющим массажем кожи головы во время уходовых процедур.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-wood-100 dark:border-zinc-700/60 text-xs font-semibold text-emeraldSalon-600 dark:text-emerald-400">
+                        ✓ Отдых для шеи и спины
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Интерактивная фото-витрина залов парикмахерской -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <h3 class="font-serif text-2xl font-bold">Пространство и зоны салона «Хочу так»</h3>
+                    <span class="text-xs text-zinc-500 dark:text-zinc-400">Нажмите на любую карточку, чтобы подробнее изучить оснащение зала</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+                    
+                    <!-- Зал 1: Деревянные рейки и черные светильники -->
+                    <div onclick="openGalleryModal('Главный зал в стиле эко-лофт', 'Стильная отделка натуральными деревянными рейками, дизайнерские матовые черные плафоны, глубокие парикмахерские кресла на гидравлике и персональные станции с УФ-стерилизаторами и экранами.')" 
+                         class="md:col-span-7 group cursor-pointer relative rounded-2xl overflow-hidden h-72 sm:h-80 bg-graphite-900 border border-wood-200 dark:border-zinc-700">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80" 
+                             onerror="this.src='https://placehold.co/800x500/27272A/FAF7F2?text=Главный+зал+с+деревянными+рейками'"
+                             alt="Главный зал с деревянными рейками" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-wood-500 mb-1">Зал №1 • Эко-лофт и реечный декор</span>
+                            <h4 class="text-white font-bold text-lg sm:text-xl">Рабочие станции с деревянными фасадами, УФ-боксами и экранами</h4>
+                            <p class="text-zinc-300 text-xs mt-1">Анатомическая мойка в углу зала • Черные купольные светильники • Пневмоуборка</p>
+                        </div>
+                    </div>
+
+                    <!-- Зал 2: Крупный план стерилизатора "Всё стерильненько" -->
+                    <div onclick="openGalleryModal('Индивидуальный УФ-стерилизатор «Всё стерильненько»', 'В каждую рабочую консоль встроен сертифицированный бокс Sterilizer with UV. Инструменты проходят дезинфекцию и хранятся под ультрафиолетом непосредственно перед клиентом.')"
+                         class="md:col-span-5 group cursor-pointer relative rounded-2xl overflow-hidden h-72 sm:h-80 bg-graphite-900 border border-wood-200 dark:border-zinc-700">
+                        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/600x500/18181B/10B981?text=УФ+Стерилизатор+Всё+стерильненько'"
+                             alt="Стерилизатор инструментов" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+                        <div class="absolute top-4 left-4 bg-black/85 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl border border-white/20 text-xs font-extrabold flex items-center gap-2">
+                            <i class="ph-fill ph-thumbs-up text-emerald-400"></i> ВСЁ СТЕРИЛЬНЕНЬКО • Sterilizer with UV
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-6 flex flex-col justify-end">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-1">Безопасность 100%</span>
+                            <h4 class="text-white font-bold text-lg sm:text-xl">Встроенные УФ-стерилизаторы на каждом месте</h4>
+                            <p class="text-zinc-300 text-xs mt-1">Инструменты достаются из стерильного бокса прямо на ваших глазах</p>
+                        </div>
+                    </div>
+
+                    <!-- Зал 3: Зеленая тропическая зона и SPA -->
+                    <div onclick="openGalleryModal('Изумрудная зона и SPA-мойка', 'Уютный зал в сочных зеленых и тропических тонах с темным потолком, деревянными рейками и глубокой раковиной для SPA-процедур кожи головы, ламинирования и биозавивки.')"
+                         class="md:col-span-5 group cursor-pointer relative rounded-2xl overflow-hidden h-64 sm:h-72 bg-emeraldSalon-900 border border-wood-200 dark:border-zinc-700">
+                        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/600x450/0D3829/FAF7F2?text=Зеленый+зал+и+SPA+мойка'"
+                             alt="Зеленая зона SPA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent p-6 flex flex-col justify-end">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 mb-1">Тропический зал • SPA для головы</span>
+                            <h4 class="text-white font-bold text-lg">Изумрудная релакс-зона для ухода и окрашивания</h4>
+                            <p class="text-zinc-300 text-xs mt-1">Спокойная камерная атмосфера для долгих бьюти-процедур</p>
+                        </div>
+                    </div>
+
+                    <!-- Зал 4: Светлый семейный зал с белыми тумбами и экранами -->
+                    <div onclick="openGalleryModal('Светлый семейный экспресс-зал', 'Просторный светлый зал с индивидуальными зеркальными арками, встроенными в белые тумбы ТВ-экранами, терминалом безналичной оплаты, кулером с питьевой водой и широким входом для детских колясок.')"
+                         class="md:col-span-7 group cursor-pointer relative rounded-2xl overflow-hidden h-64 sm:h-72 bg-graphite-900 border border-wood-200 dark:border-zinc-700">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80" 
+                             onerror="this.src='https://placehold.co/800x450/27272A/FAF7F2?text=Светлый+семейный+зал'"
+                             alt="Светлый зал парикмахерской" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent p-6 flex flex-col justify-end">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-wood-500 mb-1">Светлый зал • Удобно с детьми</span>
+                            <h4 class="text-white font-bold text-lg">Зеркальные станции с личными мониторами и широкими проходами</h4>
+                            <p class="text-zinc-300 text-xs mt-1">Кулер с водой • Бесплатный Wi-Fi • Свободный заезд с детской коляской</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- БЛОК «ДОСТУПНАЯ СРЕДА, DOG-FRIENDLY И КОМФОРТ» (ВСЕ АТРИБУТЫ ИЗ 2ГИС) -->
+    <section id="comfort" class="py-16 lg:py-24 bg-wood-100/60 dark:bg-graphite-800/50 border-b border-wood-200/70 dark:border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-wood-600 dark:text-wood-500 mb-2">
+                    <i class="ph-fill ph-heart"></i> Забота о каждом госте (По данным 2ГИС)
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">Открытая и дружелюбная среда без барьеров</h2>
+                <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
+                    К нам легко заехать с детской коляской, зайти с воспитанным питомцем и оплатить услуги любым удобным способом.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                
+                <!-- Вход с коляской -->
+                <div class="bg-white dark:bg-graphite-800 p-6 rounded-2xl border border-wood-200 dark:border-zinc-700 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-wood-100 dark:bg-zinc-700 text-wood-600 dark:text-wood-500 flex items-center justify-center text-2xl shrink-0">
+                        <i class="ph-fill ph-baby-carriage"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base mb-1">Доступный вход с детской коляской</h3>
+                        <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            Широкие двери без сложных порогов и много места в зале — молодым мамам и папам удобно приходить вместе с малышами.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Пандус и доступная среда -->
+                <div class="bg-white dark:bg-graphite-800 p-6 rounded-2xl border border-wood-200 dark:border-zinc-700 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-emeraldSalon-50 dark:bg-emeraldSalon-900/40 text-emeraldSalon-600 dark:text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="ph-fill ph-wheelchair"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base mb-1">Пандус и доступная среда</h3>
+                        <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            Оборудован удобный пандус и частично доступный вход на инвалидной коляске. Наши мастера всегда помогут и встретят у входа.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Можно с собакой -->
+                <div class="bg-white dark:bg-graphite-800 p-6 rounded-2xl border border-wood-200 dark:border-zinc-700 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="ph-fill ph-dog"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base mb-1">Можно с собакой (Dog-friendly)</h3>
+                        <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            Не с кем оставить любимого хвостатого друга? Приходите вместе — мы искренне рады воспитанным четвероногим гостям.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Способы оплаты -->
+                <div class="bg-white dark:bg-graphite-800 p-6 rounded-2xl border border-wood-200 dark:border-zinc-700 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-wood-100 dark:bg-zinc-700 text-wood-600 dark:text-wood-500 flex items-center justify-center text-2xl shrink-0">
+                        <i class="ph-fill ph-qr-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base mb-1">Карта, наличные и QR-код</h3>
+                        <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            Принимаем оплату банковской картой через терминал, по СБП / QR-коду со смартфона, а также наличный расчёт.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Бесплатный Wi-Fi -->
+                <div class="bg-white dark:bg-graphite-800 p-6 rounded-2xl border border-wood-200 dark:border-zinc-700 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-wood-100 dark:bg-zinc-700 text-wood-600 dark:text-wood-500 flex items-center justify-center text-2xl shrink-0">
+                        <i class="ph-fill ph-wifi-high"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base mb-1">Бесплатный Wi-Fi и напитки</h3>
+                        <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            Быстрый клиентский Wi-Fi для работы или отдыха, кулер с чистой водой и персональный экран напротив каждого кресла.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 9 парковок и остановка -->
+                <div class="bg-white dark:bg-graphite-800 p-6 rounded-2xl border border-wood-200 dark:border-zinc-700 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-emeraldSalon-50 dark:bg-emeraldSalon-900/40 text-emeraldSalon-600 dark:text-emerald-400 flex items-center justify-center text-2xl shrink-0">
+                        <i class="ph-fill ph-car-profile"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base mb-1">9 парковок и 5 мин от остановки</h3>
+                        <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            Вокруг здания доступно 9 парковочных зон, а от остановки «Краснококшайская» — всего 450 метров пешком (5 минут).
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ЖИВЫЕ ОТЗЫВЫ КЛИЕНТОВ С ФИЛЬТРАЦИЕЙ -->
+    <section id="reviews" class="py-16 lg:py-24 border-b border-wood-200/70 dark:border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emeraldSalon-500/10 text-emeraldSalon-600 dark:text-emerald-400 text-xs font-bold mb-3">
+                        <i class="ph-fill ph-trophy"></i> Победитель премии 2ГИС • Народный рейтинг
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold">Что говорят гости «Хочу так»</h2>
+                </div>
+                <div class="flex flex-wrap gap-2" id="reviewFilterBtns">
+                    <button onclick="filterReviews('all')" data-rev="all" class="rev-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-graphite-900 text-white dark:bg-wood-500">Все отзывы</button>
+                    <button onclick="filterReviews('color')" data-rev="color" class="rev-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-wood-100 dark:bg-zinc-800">Окрашивание и завивка</button>
+                    <button onclick="filterReviews('cut')" data-rev="cut" class="rev-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-wood-100 dark:bg-zinc-800">Каре / Каскад</button>
+                    <button onclick="filterReviews('men')" data-rev="men" class="rev-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-wood-100 dark:bg-zinc-800">Мужской зал и дети</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="reviewsGrid">
+                <!-- Отзывы рендерятся через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ЧАСТЫЕ ВОПРОСЫ (FAQ) -->
+    <section class="py-16 lg:py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-wood-600 dark:text-wood-500">Ответы мастеров</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-1">Частые вопросы перед визитом</h2>
+            </div>
+
+            <div class="space-y-3">
+                <details class="group bg-white dark:bg-graphite-800 rounded-2xl border border-wood-200 dark:border-zinc-700 p-5 cursor-pointer">
+                    <summary class="flex items-center justify-between font-bold text-sm sm:text-base list-none">
+                        <span>Чем отличается химическая завивка (от 3 200 ₽) от био-химической (от 3 000 ₽)?</span>
+                        <i class="ph-bold ph-caret-down text-wood-500 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        Био-химическая завивка выполняется на деликатных составах без агрессивного аммиака и дает мягкий, естественный завиток, сохраняя блеск волос. Классическая химическая завивка создает более упругие и долговечные кудри даже на плотных, тяжело поддающихся укладке волосах. Перед процедурой мастер бесплатно проведет тест пряди и подскажет лучший вариант.
+                    </p>
+                </details>
+
+                <details class="group bg-white dark:bg-graphite-800 rounded-2xl border border-wood-200 dark:border-zinc-700 p-5 cursor-pointer">
+                    <summary class="flex items-center justify-between font-bold text-sm sm:text-base list-none">
+                        <span>Правда ли, что инструменты стерилизуются прямо на рабочем месте?</span>
+                        <i class="ph-bold ph-caret-down text-wood-500 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        Да! На фотографиях нашего зала вы можете увидеть фирменные боксы <strong>«👍 Всё стерильненько (Sterilizer with UV)»</strong>, встроенные прямо в каждую парикмахерскую секцию. Мастер достает обработанный инструмент из УФ-камеры непосредственно перед началом вашей стрижки.
+                    </p>
+                </details>
+
+                <details class="group bg-white dark:bg-graphite-800 rounded-2xl border border-wood-200 dark:border-zinc-700 p-5 cursor-pointer">
+                    <summary class="flex items-center justify-between font-bold text-sm sm:text-base list-none">
+                        <span>Удобно ли прийти к вам с маленьким ребенком на коляске или с собакой?</span>
+                        <i class="ph-bold ph-caret-down text-wood-500 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        Конечно! У нас оборудован пандус и доступный вход для детских и инвалидных колясок. Пока вы на стрижке или окрашивании, коляску можно поставить рядом, а детям включить мультики на встроенном в зеркало экране. Также мы придерживаемся формата Dog-friendly — можно зайти с некрупной или спокойной собакой.
+                    </p>
+                </details>
+
+                <details class="group bg-white dark:bg-graphite-800 rounded-2xl border border-wood-200 dark:border-zinc-700 p-5 cursor-pointer">
+                    <summary class="flex items-center justify-between font-bold text-sm sm:text-base list-none">
+                        <span>Какие способы оплаты у вас действуют?</span>
+                        <i class="ph-bold ph-caret-down text-wood-500 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                        Мы принимаем все способы оплаты: банковские карты любых банков РФ, бесконтактную оплату по QR-коду (СБП) и наличный расчёт.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ, КАК ДОБРАТЬСЯ И ПРЯМАЯ ЗАПИСЬ -->
+    <section id="contacts" class="py-16 lg:py-24 bg-graphite-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                
+                <!-- Левая часть: Локация и маршрут -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-wood-500/20 text-wood-500 text-xs font-bold">
+                        <i class="ph-fill ph-navigation-arrow"></i> Удобная транспортная развязка
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold">Ждем вас в парикмахерской «Хочу так»</h2>
+                    <p class="text-zinc-300 text-sm sm:text-base">
+                        Мы находимся в шаговой доступности от общественного транспорта и располагаем просторной парковочной зоной вокруг здания.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="bg-graphite-800 p-5 rounded-2xl border border-white/10">
+                            <div class="flex items-center gap-2.5 text-wood-500 font-bold text-sm mb-1">
+                                <i class="ph-fill ph-bus text-lg"></i> Общественный транспорт
+                            </div>
+                            <div class="text-white font-bold text-base">Ост. «Краснококшайская»</div>
+                            <div class="text-xs text-zinc-400 mt-1">Пешком всего 5 минут (450 метров) по прямой дороге</div>
+                        </div>
+
+                        <div class="bg-graphite-800 p-5 rounded-2xl border border-white/10">
+                            <div class="flex items-center gap-2.5 text-emerald-400 font-bold text-sm mb-1">
+                                <i class="ph-fill ph-car text-lg"></i> Для автомобилистов
+                            </div>
+                            <div class="text-white font-bold text-base">9 парковок рядом</div>
+                            <div class="text-xs text-zinc-400 mt-1">Всегда есть свободное место в радиусе 1–2 минут от входа</div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка-схема маршрута -->
+                    <div class="bg-graphite-800 p-6 rounded-2xl border border-white/10 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-zinc-400">Ориентиры и инфраструктура</span>
+                            <span class="text-xs text-emerald-400 font-semibold">● Данные актуальны (2ГИС)</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-3 py-1.5 rounded-lg bg-black/40 border border-white/10">🏆 Победитель премии 2ГИС</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-black/40 border border-white/10">♿ Пандус на входе</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-black/40 border border-white/10">👶 Вход с коляской</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-black/40 border border-white/10">🐕 Можно с собакой</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-black/40 border border-white/10">💳 Карта / Наличные / QR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая часть: Быстрая форма записи -->
+                <div class="lg:col-span-6">
+                    <div class="bg-white text-graphite-900 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold mb-2">Быстрая онлайн-запись</h3>
+                        <p class="text-xs sm:text-sm text-zinc-600 mb-6">
+                            Оставьте заявку — администратор свяжется с вами в течение 10 минут, подтвердит окошко или ответит в мессенджере.
+                        </p>
+
+                        <form onsubmit="submitQuickForm(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-zinc-500 mb-1">Ваше имя</label>
+                                <input type="text" id="quickName" required placeholder="Например, Алина или Руслан" 
+                                       class="w-full px-4 py-3 rounded-xl bg-wood-50 border border-wood-200 text-sm focus:outline-none focus:border-wood-500">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-zinc-500 mb-1">Телефон / WhatsApp / TG</label>
+                                    <input type="tel" id="quickPhone" required placeholder="+7 (999) 000-00-00" 
+                                           class="w-full px-4 py-3 rounded-xl bg-wood-50 border border-wood-200 text-sm focus:outline-none focus:border-wood-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-zinc-500 mb-1">Желаемая услуга</label>
+                                    <select id="quickService" class="w-full px-4 py-3 rounded-xl bg-wood-50 border border-wood-200 text-sm font-medium focus:outline-none focus:border-wood-500">
+                                        <option value="Модельная стрижка (от 800 ₽)">Модельная стрижка (от 800 ₽)</option>
+                                        <option value="Стрижка Каре / Каскад (от 1 000 ₽)">Стрижка Каре / Каскад (от 1 000 ₽)</option>
+                                        <option value="Сложное окрашивание (от 5 000 ₽)">Сложное окрашивание (от 5 000 ₽)</option>
+                                        <option value="Мелирование (от 4 000 ₽)">Мелирование (от 4 000 ₽)</option>
+                                        <option value="Однотонное окрашивание (от 3 700 ₽)">Однотонное окрашивание (от 3 700 ₽)</option>
+                                        <option value="Био-химическая завивка (от 3 000 ₽)">Био-химическая завивка (от 3 000 ₽)</option>
+                                        <option value="Химическая завивка (от 3 200 ₽)">Химическая завивка (от 3 200 ₽)</option>
+                                        <option value="Ламинирование / SPA для головы (от 3 000 ₽)">Ламинирование / SPA (от 3 000 ₽)</option>
+                                        <option value="Вечерняя укладка «Локоны» (от 1 200 ₽)">Вечерняя укладка «Локоны» (от 1 200 ₽)</option>
+                                        <option value="Мужское окрашивание (от 2 000 ₽)">Мужское окрашивание (от 2 000 ₽)</option>
+                                        <option value="Моделирование бороды (700 ₽)">Моделирование бороды (700 ₽)</option>
+                                        <option value="Hair-Tattoo (250–500 ₽)">Hair-Tattoo (250–500 ₽)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full py-4 rounded-xl bg-graphite-900 hover:bg-wood-600 text-white font-bold text-sm transition-all shadow-lg">
+                                Забронировать время визита
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ САЙТА (FOOTER) -->
+    <footer class="bg-black text-zinc-400 py-10 text-xs border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-wood-500 text-white font-serif font-bold flex items-center justify-center">ХТ</div>
+                <span>© Парикмахерская «Хочу так». Победитель премии 2ГИС. Ост. Краснококшайская (450 м).</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="#catalog" class="hover:text-white">Прайс-лист</a>
+                <a href="#calculator" class="hover:text-white">Калькулятор</a>
+                <a href="#equipment" class="hover:text-white">Стерильность</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО ОНЛАЙН-ЗАПИСИ И КОРЗИНЫ -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4 overflow-y-auto">
+        <div class="bg-white dark:bg-graphite-800 text-graphite-900 dark:text-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border border-wood-200 dark:border-zinc-700 my-8">
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-wood-100 dark:bg-zinc-700 flex items-center justify-center hover:bg-wood-200 transition-colors">
+                <i class="ph-bold ph-x"></i>
+            </button>
+
+            <div id="bookingFormContent">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-wood-600 dark:text-wood-500">Запись в «Хочу так»</span>
+                <h3 class="font-serif text-2xl font-bold mt-1 mb-4">Ваш визит к мастеру</h3>
+
+                <!-- Список выбранных услуг -->
+                <div id="modalCartList" class="bg-wood-50 dark:bg-zinc-900 p-4 rounded-2xl border border-wood-200 dark:border-zinc-700 mb-5 space-y-2 max-h-48 overflow-y-auto text-sm"></div>
+
+                <form onsubmit="confirmModalBooking(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Ваше имя *</label>
+                            <input type="text" id="modalClientName" required placeholder="Введите имя" 
+                                   class="w-full px-3.5 py-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 border border-wood-200 dark:border-zinc-700 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Телефон *</label>
+                            <input type="tel" id="modalClientPhone" required placeholder="+7 (___) ___-__-__" 
+                                   class="w-full px-3.5 py-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 border border-wood-200 dark:border-zinc-700 text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Желаемый день</label>
+                            <input type="date" id="modalDate" 
+                                   class="w-full px-3.5 py-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 border border-wood-200 dark:border-zinc-700 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Удобное время</label>
+                            <select id="modalTime" class="w-full px-3.5 py-2.5 rounded-xl bg-wood-50 dark:bg-zinc-900 border border-wood-200 dark:border-zinc-700 text-sm">
+                                <option>Утро (10:00 – 13:00)</option>
+                                <option>День (13:00 – 17:00)</option>
+                                <option>Вечер (17:00 – 20:00)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Пожелания к визиту</label>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-wood-50 dark:bg-zinc-900 border border-wood-200 dark:border-zinc-700 cursor-pointer">
+                                <input type="checkbox" id="optStroller" class="accent-wood-500"> Буду с детской коляской
+                            </label>
+                            <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-wood-50 dark:bg-zinc-900 border border-wood-200 dark:border-zinc-700 cursor-pointer">
+                                <input type="checkbox" id="optDog" class="accent-wood-500"> Приду с собакой
+                            </label>
+                            <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-wood-50 dark:bg-zinc-900 border border-wood-200 dark:border-zinc-700 cursor-pointer">
+                                <input type="checkbox" id="optCartoons" class="accent-wood-500"> Включить мультики на экране
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-wood-500 hover:bg-wood-600 text-white font-bold text-sm shadow-lg transition-all">
+                        Подтвердить запись
+                    </button>
+                </form>
+            </div>
+
+            <!-- Экран успешного бронирования с кнопкой копирования заявки для ВК/Мессенджера -->
+            <div id="bookingSuccessContent" class="hidden text-center space-y-4 py-4">
+                <div class="w-16 h-16 rounded-full bg-emeraldSalon-500/15 text-emeraldSalon-600 dark:text-emerald-400 flex items-center justify-center text-3xl mx-auto">
+                    <i class="ph-fill ph-check-circle"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold">Заявка успешно сформирована!</h3>
+                <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300">
+                    Мы подготовили карточку вашего визита. Вы можете скопировать её одним нажатием и отправить нам в ВК, WhatsApp или Telegram для мгновенного закрепления времени:
+                </p>
+                <pre id="generatedTicketText" class="text-left text-xs bg-wood-50 dark:bg-zinc-900 p-4 rounded-2xl border border-wood-200 dark:border-zinc-700 whitespace-pre-wrap font-mono"></pre>
+                <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
+                    <button onclick="copyTicketToClipboard()" id="copyBtnText" class="flex-1 py-3 px-4 rounded-xl bg-graphite-900 dark:bg-wood-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2">
+                        <i class="ph-bold ph-copy"></i> Скопировать текст заявки
+                    </button>
+                    <button onclick="closeBookingModal()" class="py-3 px-5 rounded-xl border border-wood-200 dark:border-zinc-700 text-xs sm:text-sm font-semibold">
+                        Готово
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО ПРОСМОТРА ИНТЕРЬЕРА -->
+    <div id="galleryModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+        <div class="bg-white dark:bg-graphite-800 rounded-3xl max-w-md w-full p-6 relative shadow-2xl border border-wood-200 dark:border-zinc-700">
+            <button onclick="closeGalleryModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-wood-100 dark:bg-zinc-700 flex items-center justify-center">
+                <i class="ph-bold ph-x"></i>
+            </button>
+            <span class="text-xs font-bold uppercase tracking-wider text-wood-500">Детали интерьера «Хочу так»</span>
+            <h4 id="galleryModalTitle" class="font-serif text-xl font-bold mt-1 mb-2"></h4>
+            <p id="galleryModalDesc" class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-5"></p>
+            <button onclick="closeGalleryModal(); openBookingModal();" class="w-full py-3 rounded-xl bg-wood-500 text-white font-bold text-sm">
+                Записаться в этот зал
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT ЛОГИКА САЙТА -->
+    <script>
+        // Полная база услуг из прайса 2ГИС "Хочу так"
+        const servicesData = [
+            // СТРИЖКА (4 услуги)
+            {
+                id: 's1',
+                category: 'haircut',
+                categoryTitle: 'Стрижка • 1 из 4',
+                title: 'Модельная стрижка',
+                priceText: 'от 800 ₽',
+                basePrice: 800,
+                duration: 45,
+                badge: 'Хит для всей семьи',
+                desc: 'Мужская и женская модельная стрижка с учетом формы лица, мытьем головы и сушкой по форме. Доступна запись на детскую стрижку с мультиками на экране.'
+            },
+            {
+                id: 's2',
+                category: 'haircut',
+                categoryTitle: 'Стрижка • 2 из 4',
+                title: 'Hair-Tattoo (фигурный выстриг)',
+                priceText: '250–500 ₽',
+                basePrice: 350,
+                duration: 25,
+                badge: 'Креатив',
+                desc: 'Художественное выстригание узоров, полосок и четких геометрических линий триммером. Очень популярно среди детей, подростков и любителей ярких акцентов.'
+            },
+            {
+                id: 's3',
+                category: 'haircut',
+                categoryTitle: 'Стрижка • 3 из 4',
+                title: 'Каре (классика / боб-каре)',
+                priceText: 'от 1 000 ₽',
+                basePrice: 1000,
+                duration: 60,
+                badge: 'Идеальный срез',
+                desc: 'Ювелирно ровный срез, каре на удлинение или текстурное боб-каре, которое легко укладывается дома даже без стайлинга.'
+            },
+            {
+                id: 's4',
+                category: 'haircut',
+                categoryTitle: 'Стрижка • 4 из 4',
+                title: 'Каскад',
+                priceText: 'от 1 000 ₽',
+                basePrice: 1000,
+                duration: 60,
+                badge: 'Живой объем',
+                desc: 'Многослойная женская стрижка для придания воздушного объема, красивой динамики прядей и легкости на средних и длинных волосах.'
+            },
+
+            // КУДРИ - ЛОКОНЫ (2 услуги)
+            {
+                id: 's5',
+                category: 'curls',
+                categoryTitle: 'Кудри - Локоны • 1 из 2',
+                title: 'Химическая завивка',
+                priceText: 'от 3 200 ₽',
+                basePrice: 3200,
+                duration: 120,
+                badge: 'Стойкий завиток',
+                desc: 'Долговременные упругие кудри и стойкий прикорневой объём волос. Подбор диаметра коклюшек под желаемый размер локона.'
+            },
+            {
+                id: 's6',
+                category: 'curls',
+                categoryTitle: 'Кудри - Локоны • 2 из 2',
+                title: 'Био-химическая завивка',
+                priceText: 'от 3 000 ₽',
+                basePrice: 3000,
+                duration: 120,
+                badge: 'Щадящий состав',
+                desc: 'Деликатная завивка с уходовым комплексом для мягких, естественных локонов без пересушивания структуры волос.'
+            },
+
+            // УКЛАДКА "ЛОКОНЫ" (1 услуга)
+            {
+                id: 's7',
+                category: 'styling',
+                categoryTitle: 'Укладка «Локоны» • 1 из 1',
+                title: 'Вечерняя Укладка / Локоны',
+                priceText: 'от 1 200 ₽',
+                basePrice: 1200,
+                duration: 60,
+                badge: 'Свадебные и вечерние',
+                desc: 'Свадебные и вечерние причёски, голливудская волна, текстурные локоны и стойкий прикорневой объём для важных событий.'
+            },
+
+            // УХОДОВАЯ ПРОЦЕДУРА И SPA (1 основная + SPA для головы из 2ГИС)
+            {
+                id: 's8',
+                category: 'care',
+                categoryTitle: 'Уходовая процедура • 1 из 1',
+                title: 'Ламинирование волос',
+                priceText: 'от 3 000 ₽',
+                basePrice: 3000,
+                duration: 90,
+                badge: 'Зеркальный блеск',
+                desc: 'Глубокое запечатывание чешуек волоса, защита от секущихся кончиков, гладкость и насыщенный глянцевый блеск.'
+            },
+            {
+                id: 's9',
+                category: 'care',
+                categoryTitle: 'SPA-процедуры • 2ГИС',
+                title: 'SPA для головы и прикорневой уход',
+                priceText: 'от 1 500 ₽',
+                basePrice: 1500,
+                duration: 45,
+                badge: 'Релакс в зеленой зоне',
+                desc: 'Расслабляющий массаж головы в анатомической мойке, бережное очищение кожи, питание корней и восстановление баланса.'
+            },
+
+            // ЖЕНСКОЕ ОКРАШИВАНИЕ (3 услуги)
+            {
+                id: 's10',
+                category: 'female-color',
+                categoryTitle: 'Женское окрашивание • 1 из 3',
+                title: 'Однотонное окрашивание',
+                priceText: 'от 3 700 ₽',
+                basePrice: 3700,
+                duration: 90,
+                badge: 'Глубокий цвет',
+                desc: 'Идеально ровное покрытие от корней до кончиков, закрашивание седины на 100% и глянцевый уход после окрашивания.'
+            },
+            {
+                id: 's11',
+                category: 'female-color',
+                categoryTitle: 'Женское окрашивание • 2 из 3',
+                title: 'Мелирование',
+                priceText: 'от 4 000 ₽',
+                basePrice: 4000,
+                duration: 120,
+                badge: 'Освежает образ',
+                desc: 'Классическое и частое вуальное мелирование для создания рельефного цвета, визуальной густоты и плавного перехода.'
+            },
+            {
+                id: 's12',
+                category: 'female-color',
+                categoryTitle: 'Женское окрашивание • 3 из 3',
+                title: 'Сложное окрашивание',
+                priceText: 'от 5 000 ₽',
+                basePrice: 5000,
+                duration: 180,
+                badge: 'Airtouch • Балаяж • Шатуш',
+                desc: 'Многогранные переливы оттенков, индивидуальный коктейль тонирования и мягкая растяжка, позволяющая не красить корни до 4–6 месяцев.'
+            },
+
+            // МУЖСКОЕ ОКРАШИВАНИЕ (1) И МУЖСКОЙ УХОД (1)
+            {
+                id: 's13',
+                category: 'men',
+                categoryTitle: 'Окрашивание • 1 из 1',
+                title: 'Мужское окрашивание',
+                priceText: 'от 2 000 ₽',
+                basePrice: 2000,
+                duration: 60,
+                badge: 'Естественный тон',
+                desc: 'Деликатный камуфляж седины или стильное изменение оттенка волос с максимально натуральным результатом без четких границ.'
+            },
+            {
+                id: 's14',
+                category: 'men',
+                categoryTitle: 'Мужской уход • 1 из 1',
+                title: 'Моделирование бороды',
+                priceText: '700 ₽',
+                basePrice: 700,
+                duration: 30,
+                badge: 'Четкий контур',
+                desc: 'Стрижка и придание правильной геометрии бороде и усам, окантовка шеи и щек, уходовые масла.'
+            }
+        ];
+
+        // Живые отзывы под реальные услуги салона
+        const reviewsData = [
+            {
+                cat: 'color',
+                name: 'Гульназ М.',
+                service: 'Сложное окрашивание (от 5 000 ₽)',
+                text: 'Пришла по отзывам в 2ГИС от остановки Краснококшайская — реально 5 минут пешком. Делала сложное окрашивание, сидела 3 часа, но перед креслом встроен экран, включили кино! Очень порадовал бокс «Всё стерильненько» прямо передо мной. Цвет получился ровно как я просила!',
+                date: 'Проверенный клиент 2ГИС'
+            },
+            {
+                cat: 'cut',
+                name: 'Елена В.',
+                service: 'Стрижка Каре (от 1 000 ₽) + SPA для головы',
+                text: 'Стригу каре только здесь! Срез идеальный, волосок к волоску. Отдельная любовь — их зеленый зал с мойкой и SPA для головы, после рабочего дня настоящий релакс. Оплатила по QR-коду за секунду.',
+                date: 'Проверенный клиент 2ГИС'
+            },
+            {
+                cat: 'men',
+                name: 'Артур и сын Тимур',
+                service: 'Модельная стрижка (800 ₽) + Моделирование бороды (700 ₽) + Hair-Tattoo',
+                text: 'Приходим вдвоем с сыном, у входа всегда есть где припарковаться (рядом куча парковок). Мне отлично оформили бороду и стрижку, а сыну выстригли молнию Hair-Tattoo за 300 рублей, пока он смотрел мультики на экране под зеркалом.',
+                date: 'Проверенный клиент 2ГИС'
+            },
+            {
+                cat: 'color',
+                name: 'Марина С.',
+                service: 'Био-химическая завивка (от 3 000 ₽)',
+                text: 'Давно мечтала о кудрях, но боялась испортить волосы. Мастер посоветовала био-химическую завивку. Локоны живые, мягкие, прикорневой объем держится шикарно!',
+                date: 'Проверенный клиент 2ГИС'
+            },
+            {
+                cat: 'men',
+                name: 'Ольга К.',
+                service: 'Женская стрижка Каскад + заезд с коляской',
+                text: 'Для мам в декрете просто находка: заехала прямо с детской коляской по пандусу без проблем, места внутри много. Сделали шикарный каскад за 1000 рублей, волосы лежат объемно даже без укладки!',
+                date: 'Проверенный клиент 2ГИС'
+            },
+            {
+                cat: 'color',
+                name: 'Диана Р.',
+                service: 'Ламинирование (от 3 000 ₽) и Вечерняя укладка',
+                text: 'Собиралась здесь на свадьбу подруги: сначала сделали уходовое ламинирование, а потом вечернюю укладку «Локоны». Блеск невероятный, прическа продержалась до самого утра!',
+                date: 'Проверенный клиент 2ГИС'
+            }
+        ];
+
+        let currentCategory = 'all';
+        let selectedCart = [];
+        let selectedHairLengthExtra = 0;
+        let selectedHairLengthTitle = 'Короткие (до 15 см)';
+
+        // Инициализация при загрузке
+        window.onload = function() {
+            renderServices();
+            renderReviews('all');
+            calculatePrice();
+            // Установка сегодняшней даты в форму
+            const dateInput = document.getElementById('modalDate');
+            if (dateInput) {
+                dateInput.valueAsDate = new Date();
+            }
+        };
+
+        // Рендер карточек услуг
+        function renderServices() {
+            const container = document.getElementById('servicesContainer');
+            const searchVal = (document.getElementById('serviceSearch').value || '').toLowerCase();
+
+            const filtered = servicesData.filter(item => {
+                const matchCat = currentCategory === 'all' || item.category === currentCategory;
+                const matchSearch = item.title.toLowerCase().includes(searchVal) || 
+                                    item.desc.toLowerCase().includes(searchVal) ||
+                                    item.categoryTitle.toLowerCase().includes(searchVal);
+                return matchCat && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full bg-white dark:bg-graphite-800 p-8 rounded-2xl text-center border border-wood-200 dark:border-zinc-700">
+                        <p class="font-bold text-lg mb-2">По вашему запросу ничего не найдено</p>
+                        <button onclick="resetCatalogFilter()" class="px-4 py-2 rounded-xl bg-wood-500 text-white text-xs font-bold">Показать все 14 позиций прайса</button>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => {
+                const inCart = selectedCart.some(c => c.id === item.id);
+                return `
+                    <div class="fade-in-up bg-white dark:bg-graphite-800 rounded-2xl p-6 border ${inCart ? 'border-wood-500 ring-2 ring-wood-500/20' : 'border-wood-200 dark:border-zinc-700'} shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="text-[11px] font-extrabold uppercase tracking-wider text-wood-600 dark:text-wood-500">${item.categoryTitle}</span>
+                                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-wood-100 dark:bg-zinc-700 text-graphite-900 dark:text-zinc-200">${item.badge}</span>
+                            </div>
+                            <h3 class="font-bold text-lg sm:text-xl mb-2">${item.title}</h3>
+                            <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5">${item.desc}</p>
+                        </div>
+
+                        <div class="pt-4 border-t border-dashed border-wood-200 dark:border-zinc-700 flex items-center justify-between gap-3">
+                            <div>
+                                <span class="block text-[11px] text-zinc-400">Стоимость</span>
+                                <span class="font-extrabold text-xl text-graphite-900 dark:text-white">${item.priceText}</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="toggleServiceInCart('${item.id}')" 
+                                        class="px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${inCart ? 'bg-emeraldSalon-500 text-white' : 'bg-wood-100 dark:bg-zinc-700 hover:bg-wood-200 text-graphite-900 dark:text-white'}">
+                                    <i class="ph-bold ${inCart ? 'ph-check' : 'ph-plus'}"></i>
+                                    <span>${inCart ? 'В записи' : 'Выбрать'}</span>
+                                </button>
+                                <button onclick="openBookingModal('${item.title} (${item.priceText})', ${item.basePrice})" 
+                                        class="px-3.5 py-2.5 rounded-xl bg-graphite-900 dark:bg-wood-500 hover:bg-wood-600 text-white text-xs font-bold transition-all">
+                                    Записаться
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Фильтрация по табам
+        function filterCatalog(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-tab').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'cat-tab active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-graphite-900 text-white dark:bg-wood-500';
+                } else {
+                    btn.className = 'cat-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-wood-50 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:bg-wood-100';
+                }
+            });
+            renderServices();
+        }
+
+        function resetCatalogFilter() {
+            document.getElementById('serviceSearch').value = '';
+            filterCatalog('all');
+        }
+
+        function jumpToCategory(cat) {
+            filterCatalog(cat);
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Добавление и удаление из мини-корзины визита
+        function toggleServiceInCart(serviceId) {
+            const exists = selectedCart.findIndex(item => item.id === serviceId);
+            if (exists > -1) {
+                selectedCart.splice(exists, 1);
+            } else {
+                const found = servicesData.find(s => s.id === serviceId);
+                if (found) selectedCart.push(found);
+            }
+            updateCartUI();
+            renderServices();
+        }
+
+        function clearCart() {
+            selectedCart = [];
+            updateCartUI();
+            renderServices();
+        }
+
+        function updateCartUI() {
+            const countEl = document.getElementById('headerCartCount');
+            const stickyBar = document.getElementById('stickyCartBar');
+            const summaryEl = document.getElementById('stickyCartSummary');
+
+            countEl.textContent = selectedCart.length;
+
+            if (selectedCart.length > 0) {
+                stickyBar.classList.remove('hidden');
+                const totalSum = selectedCart.reduce((acc, s) => acc + s.basePrice, 0);
+                const totalMins = selectedCart.reduce((acc, s) => acc + s.duration, 0);
+                summaryEl.textContent = `Выбрано услуг: ${selectedCart.length} • Ориентировочно от ${totalSum.toLocaleString('ru-RU')} ₽ (~${totalMins} мин)`;
+            } else {
+                stickyBar.classList.add('hidden');
+            }
+        }
+
+        // Калькулятор окрашивания и завивки
+        function setHairLength(extraPrice, title, btnEl) {
+            selectedHairLengthExtra = extraPrice;
+            selectedHairLengthTitle = title;
+            document.querySelectorAll('.len-btn').forEach(b => {
+                b.className = 'len-btn p-3 rounded-xl border border-white/10 bg-graphite-900 text-left hover:border-white/30 transition-all';
+            });
+            btnEl.className = 'len-btn active p-3 rounded-xl border border-wood-500 bg-wood-500/20 text-left transition-all';
+            calculatePrice();
+        }
+
+        function calculatePrice() {
+            const select = document.getElementById('calcProcedure');
+            const base = parseInt(select.value, 10);
+            const selectedOption = select.options[select.selectedIndex];
+            let duration = parseInt(selectedOption.getAttribute('data-time'), 10);
+
+            const spaAddon = document.getElementById('addonSpa').checked ? 900 : 0;
+            const cutAddon = document.getElementById('addonCut').checked ? 800 : 0;
+
+            if (spaAddon) duration += 25;
+            if (cutAddon) duration += 30;
+
+            const total = base + selectedHairLengthExtra + spaAddon + cutAddon;
+            document.getElementById('calcTotalPrice').textContent = `от ${total.toLocaleString('ru-RU')} ₽`;
+            document.getElementById('calcTotalTime').textContent = `~ ${Math.round(duration / 30) * 0.5} ч (${duration} мин)`;
+        }
+
+        function bookFromCalculator() {
+            const select = document.getElementById('calcProcedure');
+            const procName = select.options[select.selectedIndex].getAttribute('data-name');
+            const priceText = document.getElementById('calcTotalPrice').textContent;
+            const addons = [];
+            if (document.getElementById('addonSpa').checked) addons.push('SPA для головы');
+            if (document.getElementById('addonCut').checked) addons.push('Оформление среза');
+
+            const customTitle = `${procName} | Длина: ${selectedHairLengthTitle}${addons.length ? ' + ' + addons.join(', ') : ''} (${priceText})`;
+            openBookingModal(customTitle);
+        }
+
+        // Рендер отзывов
+        function renderReviews(filter) {
+            const grid = document.getElementById('reviewsGrid');
+            const list = filter === 'all' ? reviewsData : reviewsData.filter(r => r.cat === filter);
+
+            grid.innerHTML = list.map(r => `
+                <div class="fade-in-up bg-white dark:bg-graphite-800 p-6 rounded-2xl border border-wood-200 dark:border-zinc-700 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="text-amber-400 text-sm flex gap-0.5">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-emeraldSalon-600 dark:text-emerald-400 bg-emeraldSalon-50 dark:bg-emeraldSalon-900/40 px-2.5 py-0.5 rounded-full">${r.date}</span>
+                        </div>
+                        <div class="text-xs font-bold text-wood-600 dark:text-wood-500 mb-2">${r.service}</div>
+                        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4">«${r.text}»</p>
+                    </div>
+                    <div class="pt-3 border-t border-wood-100 dark:border-zinc-700/60 font-bold text-xs">${r.name}</div>
+                </div>
+            `).join('');
+        }
+
+        function filterReviews(cat) {
+            document.querySelectorAll('.rev-btn').forEach(btn => {
+                if (btn.dataset.rev === cat) {
+                    btn.className = 'rev-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-graphite-900 text-white dark:bg-wood-500';
+                } else {
+                    btn.className = 'rev-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-wood-100 dark:bg-zinc-800';
+                }
+            });
+            renderReviews(cat);
+        }
+
+        // Модальное окно онлайн-записи
+        let singleModalService = null;
+
+        function openBookingModal(customServiceTitle = null) {
+            singleModalService = customServiceTitle;
+            const modal = document.getElementById('bookingModal');
+            const formContent = document.getElementById('bookingFormContent');
+            const successContent = document.getElementById('bookingSuccessContent');
+            const cartList = document.getElementById('modalCartList');
+
+            formContent.classList.remove('hidden');
+            successContent.classList.add('hidden');
+
+            if (customServiceTitle) {
+                cartList.innerHTML = `
+                    <div class="flex items-center justify-between font-bold text-graphite-900 dark:text-white">
+                        <span>✓ ${customServiceTitle}</span>
+                    </div>
+                `;
+            } else if (selectedCart.length > 0) {
+                const total = selectedCart.reduce((acc, s) => acc + s.basePrice, 0);
+                cartList.innerHTML = selectedCart.map(s => `
+                    <div class="flex items-center justify-between py-1 border-b border-wood-200/50 dark:border-zinc-700 last:border-none">
+                        <span class="font-medium">${s.title}</span>
+                        <span class="font-bold">${s.priceText}</span>
+                    </div>
+                `).join('') + `
+                    <div class="pt-2 flex items-center justify-between font-extrabold text-wood-600 dark:text-wood-500">
+                        <span>Итого по прайсу:</span>
+                        <span>от ${total.toLocaleString('ru-RU')} ₽</span>
+                    </div>
+                `;
+            } else {
+                cartList.innerHTML = `
+                    <div class="text-xs text-zinc-500">Услуга будет уточнена с администратором (или выберите услуги в каталоге).</div>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function confirmModalBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('modalClientName').value;
+            const phone = document.getElementById('modalClientPhone').value;
+            const date = document.getElementById('modalDate').value || 'Ближайший свободный день';
+            const time = document.getElementById('modalTime').value;
+
+            const extras = [];
+            if (document.getElementById('optStroller').checked) extras.push('С детской коляской');
+            if (document.getElementById('optDog').checked) extras.push('С собакой (Dog-friendly)');
+            if (document.getElementById('optCartoons').checked) extras.push('Включить мультики на экране');
+
+            let servicesListText = 'Консультация и подбор стрижки / окрашивания';
+            if (singleModalService) {
+                servicesListText = singleModalService;
+            } else if (selectedCart.length > 0) {
+                servicesListText = selectedCart.map(s => `${s.title} (${s.priceText})`).join(', ');
+            }
+
+            const ticket = `Заявка в парикмахерскую «Хочу так»\n` +
+                           `👤 Имя: ${name}\n` +
+                           `📞 Телефон: ${phone}\n` +
+                           `✂️ Услуги: ${servicesListText}\n` +
+                           `📅 Дата и время: ${date} (${time})` +
+                           (extras.length ? `\n✨ Дополнительно: ${extras.join(', ')}` : '');
+
+            document.getElementById('generatedTicketText').textContent = ticket;
+            document.getElementById('bookingFormContent').classList.add('hidden');
+            document.getElementById('bookingSuccessContent').classList.remove('hidden');
+        }
+
+        function submitQuickForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('quickName').value;
+            const phone = document.getElementById('quickPhone').value;
+            const service = document.getElementById('quickService').value;
+
+            document.getElementById('modalClientName').value = name;
+            document.getElementById('modalClientPhone').value = phone;
+            openBookingModal(service);
+            confirmModalBooking(new Event('submit'));
+        }
+
+        // Копирование текста заявки в буфер обмена
+        function copyTicketToClipboard() {
+            const text = document.getElementById('generatedTicketText').textContent;
+            const tempArea = document.createElement('textarea');
+            tempArea.value = text;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempArea);
+
+            const btn = document.getElementById('copyBtnText');
+            btn.innerHTML = '<i class="ph-bold ph-check"></i> Скопировано! Отправьте в ВК или WhatsApp';
+        }
+
+        // Модальное окно деталей интерьера
+        function openGalleryModal(title, desc) {
+            document.getElementById('galleryModalTitle').textContent = title;
+            document.getElementById('galleryModalDesc').textContent = desc;
+            const modal = document.getElementById('galleryModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeGalleryModal() {
+            const modal = document.getElementById('galleryModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Переключение светлой и темной темы
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                icon.className = 'ph ph-sun text-lg text-amber-400';
+            } else {
+                icon.className = 'ph ph-moon text-lg';
+            }
+        }
+
+        // Мобильное меню
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
